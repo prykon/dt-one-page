@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Disciple.Tools - One Page Extension
+ * Plugin Name: Disciple.Tools - One Page Insights
  * Plugin URI: https://github.com/DiscipleTools/disciple-tools-one-page-extension
  * Description: One page extension of Disciple Tools
  * Version:  0.2
@@ -19,10 +19,10 @@
 /**
  * PLEASE, RENAME CLASS AND FUNCTION NAMES BEFORE USING TEMPLATE
  * Rename these three strings:
- *      One Page Extension
- *      Admin Page
- *      Admin_Page
- *      admin_page
+ *      One Page Insights
+ *      Insights Page
+ *      Insights_Page
+ *      insights_page
  */
 
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly
@@ -38,8 +38,8 @@ add_action( 'after_setup_theme', function (){
     if ( $is_theme_dt && version_compare( $version, $required_dt_theme_version, "<" ) ) {
         add_action('admin_notices', function () {
             ?>
-            <div class="notice notice-error notice-admin_page is-dismissible" data-notice="admin_page">Disciple
-                Tools Theme not active or not latest version for Admin Page plugin.
+            <div class="notice notice-error notice-insights_page is-dismissible" data-notice="insights_page">Disciple
+                Tools Theme not active or not latest version for Insights Page plugin.
             </div><?php
         });
         return false;
@@ -58,19 +58,19 @@ add_action( 'after_setup_theme', function (){
      */
     $is_rest = dt_is_rest();
     if ( !$is_rest || strpos( dt_get_url_path(), 'sample' ) !== false ){
-        return Admin_Page::instance();
+        return Insights_Page::instance();
     }
     return false;
 } );
 
 
 /**
- * Class Admin_Page
+ * Class Insights_Page
  */
-class Admin_Page {
+class Insights_Page {
 
-    public $token = 'admin_page';
-    public $title = 'Admin Page';
+    public $token = 'insights_page';
+    public $title = 'Insights Page';
     public $permissions = 'manage_dt';
 
     /**  Singleton */
@@ -317,5 +317,5 @@ class Admin_Page {
 }
 
 // Register activation hook.
-register_activation_hook( __FILE__, [ 'Admin_Page', 'activation' ] );
-register_deactivation_hook( __FILE__, [ 'Admin_Page', 'deactivation' ] );
+register_activation_hook( __FILE__, [ 'Insights_Page', 'activation' ] );
+register_deactivation_hook( __FILE__, [ 'Insights_Page', 'deactivation' ] );

@@ -1,4 +1,4 @@
-# Disciple Tools - One Page Extension
+# Disciple Tools - One Page Insights
 This project is similar to the full plugin starter template, but it is intended for small modifications that don't require languages, rest, and other features provided by the full starter plugin.
 
 ## What is Included
@@ -13,7 +13,7 @@ This project is similar to the full plugin starter template, but it is intended 
 ## Setup Instructions
 
 Refactor and rename these strings:
-- One Page Extension
-- Admin Page
-- Admin_Page
-- admin_page
+- One Page Insights
+- Insights Page
+- Insights_Page
+- insights_page
